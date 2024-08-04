@@ -1,5 +1,28 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(const Ping());
+}
+
+
+class Ping extends StatelessWidget {
+  const Ping({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: const Color.fromARGB(255, 18, 32, 47),
+      ),
+      home: Scaffold(
+        body: ListView(children: [
+          PrivacyAndSecurity(),
+        ]),
+      ),
+    );
+  }
+}
+
 class PrivacyAndSecurity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -9,12 +32,12 @@ class PrivacyAndSecurity extends StatelessWidget {
           width: 360,
           height: 800,
           clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(color: Colors.white),
+          decoration: const BoxDecoration(color: Colors.white),
           child: Stack(
             children: [
-              Positioned(
+              const Positioned(
                 left: 89,
-                top: 67,
+                top: 69,
                 child: SizedBox(
                   width: 182,
                   child: Text(
@@ -23,7 +46,7 @@ class PrivacyAndSecurity extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 18,
-                      fontFamily: 'Manrope',
+                      fontFamily: 'Roboto',
                       fontWeight: FontWeight.w600,
                       height: 0,
                       letterSpacing: 0.18,
@@ -38,18 +61,18 @@ class PrivacyAndSecurity extends StatelessWidget {
                   width: 375,
                   height: 44,
                   clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   child: Stack(
                     children: [
-                      Positioned(
+                      const Positioned(
                         left: 0,
                         top: 0,
-                        child: Container(width: 375, height: 44),
+                        child: SizedBox(width: 375, height: 44),
                       ),
                       Positioned(
                         left: 336,
                         top: 18,
-                        child: Container(
+                        child: SizedBox(
                           width: 24.50,
                           height: 10.50,
                           child: Stack(
@@ -60,7 +83,7 @@ class PrivacyAndSecurity extends StatelessWidget {
                                 child: Container(
                                   width: 22,
                                   height: 10.50,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     image: DecorationImage(
                                       image: NetworkImage("https://via.placeholder.com/22x10"),
                                       fit: BoxFit.fill,
@@ -74,7 +97,7 @@ class PrivacyAndSecurity extends StatelessWidget {
                                 child: Container(
                                   width: 1.50,
                                   height: 3.87,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     image: DecorationImage(
                                       image: NetworkImage("https://via.placeholder.com/1x4"),
                                       fit: BoxFit.fill,
@@ -89,7 +112,7 @@ class PrivacyAndSecurity extends StatelessWidget {
                                   width: 18,
                                   height: 6.50,
                                   decoration: ShapeDecoration(
-                                    color: Color(0xFF060606),
+                                    color: const Color(0xFF060606),
                                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(1)),
                                   ),
                                 ),
@@ -104,7 +127,7 @@ class PrivacyAndSecurity extends StatelessWidget {
                         child: Container(
                           width: 15.27,
                           height: 10.97,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             image: DecorationImage(
                               image: NetworkImage("https://via.placeholder.com/15x11"),
                               fit: BoxFit.fill,
@@ -118,7 +141,7 @@ class PrivacyAndSecurity extends StatelessWidget {
                         child: Container(
                           width: 17,
                           height: 10.67,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             image: DecorationImage(
                               image: NetworkImage("https://via.placeholder.com/17x11"),
                               fit: BoxFit.fill,
@@ -131,27 +154,25 @@ class PrivacyAndSecurity extends StatelessWidget {
                         top: 14,
                         child: Container(
                           width: 54,
-                          height: 18,
                           clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(),
-                          child: Stack(
+                          decoration: const BoxDecoration(),
+                          child: const Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Positioned(
-                                left: 0,
-                                top: 0,
-                                child: SizedBox(
-                                  width: 54,
-                                  child: Text(
-                                    '9:41',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Color(0xFF171717),
-                                      fontSize: 15,
-                                      fontFamily: 'Open Sans',
-                                      fontWeight: FontWeight.w600,
-                                      height: 0,
-                                      letterSpacing: -0.30,
-                                    ),
+                              SizedBox(
+                                width: 54,
+                                child: Text(
+                                  '9:41',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Color(0xFF171717),
+                                    fontSize: 15,
+                                    fontFamily: 'Open Sans',
+                                    fontWeight: FontWeight.w600,
+                                    height: 0,
+                                    letterSpacing: -0.30,
                                   ),
                                 ),
                               ),
@@ -163,34 +184,25 @@ class PrivacyAndSecurity extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
-                left: -6,
-                top: 86,
-                child: Container(
-                  width: 393.43,
-                  height: 211,
+              const Positioned(
+                left: 27,
+                top: 111,
+                child: SizedBox(
+                  width: 348,
+                  height: 167,
                   child: Stack(
                     children: [
                       Positioned(
-                        left: 0,
-                        top: 0,
-                        child: Container(
-                          width: 393.43,
-                          height: 184.76,
-                          child: Stack(),
-                        ),
-                      ),
-                      Positioned(
-                        left: 41.43,
-                        top: 70,
-                        child: Container(
+                        left: 5,
+                        top: 58.04,
+                        child: SizedBox(
                           width: 301.57,
-                          height: 19.16,
+                          height: 19.12,
                           child: Stack(
                             children: [
                               Positioned(
                                 left: 0,
-                                top: 0.04,
+                                top: 0,
                                 child: SizedBox(
                                   width: 152,
                                   height: 19.12,
@@ -199,7 +211,7 @@ class PrivacyAndSecurity extends StatelessWidget {
                                     style: TextStyle(
                                       color: Color(0xFF333333),
                                       fontSize: 16,
-                                      fontFamily: 'Varela Round',
+                                      fontFamily: 'Roboto',
                                       fontWeight: FontWeight.w400,
                                       height: 0,
                                       letterSpacing: 0.16,
@@ -208,8 +220,8 @@ class PrivacyAndSecurity extends StatelessWidget {
                                 ),
                               ),
                               Positioned(
-                                left: 234.57,
-                                top: 0,
+                                left: 236,
+                                top: 0.96,
                                 child: SizedBox(
                                   width: 54,
                                   height: 17,
@@ -218,7 +230,7 @@ class PrivacyAndSecurity extends StatelessWidget {
                                     style: TextStyle(
                                       color: Color(0x993C3C43),
                                       fontSize: 14,
-                                      fontFamily: 'Varela Round',
+                                      fontFamily: 'Roboto',
                                       fontWeight: FontWeight.w400,
                                       height: 0.09,
                                       letterSpacing: -0.15,
@@ -231,9 +243,9 @@ class PrivacyAndSecurity extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        left: 41,
-                        top: 155,
-                        child: Container(
+                        left: 5,
+                        top: 148,
+                        child: SizedBox(
                           width: 302.43,
                           height: 19,
                           child: Stack(
@@ -249,7 +261,107 @@ class PrivacyAndSecurity extends StatelessWidget {
                                     style: TextStyle(
                                       color: Color(0xFF333333),
                                       fontSize: 16,
-                                      fontFamily: 'Varela Round',
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.w400,
+                                      height: 0,
+                                      letterSpacing: 0.16,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 220,
+                                top: 1,
+                                child: SizedBox(
+                                  width: 70,
+                                  height: 17,
+                                  child: Text(
+                                    'Everybody',
+                                    style: TextStyle(
+                                      color: Color(0x993C3C43),
+                                      fontSize: 14,
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.w400,
+                                      height: 0.09,
+                                      letterSpacing: -0.15,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        left: 5,
+                        top: 119,
+                        child: SizedBox(
+                          width: 302,
+                          height: 19.12,
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                left: 0,
+                                top: 0,
+                                child: SizedBox(
+                                  width: 136,
+                                  height: 19.12,
+                                  child: Text(
+                                    'Voice Chats',
+                                    style: TextStyle(
+                                      color: Color(0xFF333333),
+                                      fontSize: 16,
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.w400,
+                                      height: 0,
+                                      letterSpacing: 0.16,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 235,
+                                top: 1,
+                                child: SizedBox(
+                                  width: 53,
+                                  height: 17,
+                                  child: Text(
+                                    'Nobody',
+                                    style: TextStyle(
+                                      color: Color(0x993C3C43),
+                                      fontSize: 14,
+                                      fontFamily: 'Roboto',
+                                      fontWeight: FontWeight.w400,
+                                      height: 0.09,
+                                      letterSpacing: -0.15,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        left: 5,
+                        top: 87,
+                        child: SizedBox(
+                          width: 302,
+                          height: 22.12,
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                left: 0,
+                                top: 3,
+                                child: SizedBox(
+                                  width: 162,
+                                  height: 19.12,
+                                  child: Text(
+                                    'Profile Picture',
+                                    style: TextStyle(
+                                      color: Color(0xFF333333),
+                                      fontSize: 16,
+                                      fontFamily: 'Roboto',
                                       fontWeight: FontWeight.w400,
                                       height: 0,
                                       letterSpacing: 0.16,
@@ -268,7 +380,7 @@ class PrivacyAndSecurity extends StatelessWidget {
                                     style: TextStyle(
                                       color: Color(0x993C3C43),
                                       fontSize: 14,
-                                      fontFamily: 'Varela Round',
+                                      fontFamily: 'Roboto',
                                       fontWeight: FontWeight.w400,
                                       height: 0.09,
                                       letterSpacing: -0.15,
@@ -281,108 +393,8 @@ class PrivacyAndSecurity extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        left: 41.43,
-                        top: 126.38,
-                        child: Container(
-                          width: 302,
-                          height: 19.62,
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                left: 0,
-                                top: 0,
-                                child: SizedBox(
-                                  width: 136,
-                                  height: 19.12,
-                                  child: Text(
-                                    'Voice Chats',
-                                    style: TextStyle(
-                                      color: Color(0xFF333333),
-                                      fontSize: 16,
-                                      fontFamily: 'Varela Round',
-                                      fontWeight: FontWeight.w400,
-                                      height: 0,
-                                      letterSpacing: 0.16,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                left: 234.57,
-                                top: 2.62,
-                                child: SizedBox(
-                                  width: 53,
-                                  height: 17,
-                                  child: Text(
-                                    'Nobody',
-                                    style: TextStyle(
-                                      color: Color(0x993C3C43),
-                                      fontSize: 14,
-                                      fontFamily: 'Varela Round',
-                                      fontWeight: FontWeight.w400,
-                                      height: 0.09,
-                                      letterSpacing: -0.15,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        left: 41.43,
-                        top: 98.21,
-                        child: Container(
-                          width: 301.57,
-                          height: 20.79,
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                left: 0,
-                                top: 0,
-                                child: SizedBox(
-                                  width: 162,
-                                  height: 19.12,
-                                  child: Text(
-                                    'Profile Picture',
-                                    style: TextStyle(
-                                      color: Color(0xFF333333),
-                                      fontSize: 16,
-                                      fontFamily: 'Varela Round',
-                                      fontWeight: FontWeight.w400,
-                                      height: 0,
-                                      letterSpacing: 0.16,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                left: 218.57,
-                                top: 3.79,
-                                child: SizedBox(
-                                  width: 70,
-                                  height: 17,
-                                  child: Text(
-                                    'Everybody',
-                                    style: TextStyle(
-                                      color: Color(0x993C3C43),
-                                      fontSize: 14,
-                                      fontFamily: 'Varela Round',
-                                      fontWeight: FontWeight.w400,
-                                      height: 0.09,
-                                      letterSpacing: -0.15,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        left: 36,
-                        top: 25,
+                        left: 0,
+                        top: 0,
                         child: SizedBox(
                           width: 61,
                           height: 22,
@@ -392,8 +404,8 @@ class PrivacyAndSecurity extends StatelessWidget {
                             style: TextStyle(
                               color: Color(0xFF333333),
                               fontSize: 16,
-                              fontFamily: 'Open Sans',
-                              fontWeight: FontWeight.w600,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w500,
                               height: 0,
                               letterSpacing: 0.16,
                             ),
@@ -401,8 +413,8 @@ class PrivacyAndSecurity extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        left: 31,
-                        top: 194,
+                        left: 5,
+                        top: 28,
                         child: SizedBox(
                           width: 343,
                           child: Text(
@@ -410,7 +422,7 @@ class PrivacyAndSecurity extends StatelessWidget {
                             style: TextStyle(
                               color: Color(0xFF636366),
                               fontSize: 14,
-                              fontFamily: 'Varela Round',
+                              fontFamily: 'Roboto',
                               fontWeight: FontWeight.w400,
                               height: 0.09,
                               letterSpacing: -0.15,
@@ -422,8 +434,8 @@ class PrivacyAndSecurity extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
-                left: 21,
+              const Positioned(
+                left: 19,
                 top: 49,
                 child: Text(
                   'Back',
@@ -437,25 +449,25 @@ class PrivacyAndSecurity extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
-                left: -6,
-                top: 310,
-                child: Container(
-                  width: 368,
-                  height: 83.50,
+              const Positioned(
+                left: 19,
+                top: 326,
+                child: SizedBox(
+                  width: 311,
+                  height: 54,
                   child: Stack(
                     children: [
                       Positioned(
-                        left: 41,
-                        top: 50,
+                        left: 12.63,
+                        top: 35,
                         child: SizedBox(
-                          width: 110,
+                          width: 106.91,
                           child: Text(
                             'Blocked Users',
                             style: TextStyle(
                               color: Color(0xFF333333),
                               fontSize: 16,
-                              fontFamily: 'Varela Round',
+                              fontFamily: 'Roboto',
                               fontWeight: FontWeight.w400,
                               height: 0,
                               letterSpacing: 0.16,
@@ -464,18 +476,18 @@ class PrivacyAndSecurity extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        left: 20,
-                        top: 13,
+                        left: 0,
+                        top: 0,
                         child: SizedBox(
-                          width: 84,
+                          width: 81.64,
                           child: Text(
                             'Blocked',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Color(0xFF333333),
                               fontSize: 16,
-                              fontFamily: 'Open Sans',
-                              fontWeight: FontWeight.w600,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w500,
                               height: 0,
                               letterSpacing: 0.16,
                             ),
@@ -483,10 +495,10 @@ class PrivacyAndSecurity extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        left: 316,
-                        top: 51,
+                        left: 287.67,
+                        top: 36,
                         child: SizedBox(
-                          width: 10,
+                          width: 9.72,
                           height: 17,
                           child: Text(
                             '9',

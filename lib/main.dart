@@ -1,40 +1,48 @@
-import 'dart:math';
-
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
-import 'join_screen.dart';
-import "signalling_service.dart";
 
-void main() {
-  // start videoCall app
-  runApp(VideoCallApp());
+class UserModel with ChangeNotifier {
+  late String _pingID;
+  // Other user properties
+
+  String get pingID => _pingID;
+
+  void setPingID(String pingID) {
+    _pingID = pingID;
+    notifyListeners();
+  }
 }
 
-class VideoCallApp extends StatelessWidget {
-  VideoCallApp({super.key});
+void main() {
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => UserModel(),
+      child: MyApp(),
+    ),
+  );
+}
 
-  // signalling server url
-  final String websocketUrl = "WEB_SOCKET_SERVER_URL";
-
-  // generate callerID of local user
-  final String selfCallerID =
-      Random().nextInt(999999).toString().padLeft(6, '0');
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // init signalling service
-    SignallingService.instance.init(
-      websocketUrl: websocketUrl,
-      selfCallerID: selfCallerID,
-    );
-
-    // return material app
     return MaterialApp(
-      darkTheme: ThemeData.dark().copyWith(
-        useMaterial3: true,
-        colorScheme: const ColorScheme.dark(),
+      home: HomeScreen(),
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('PING App')),
+      body: Center(
+        child: Consumer<UserModel>(
+          builder: (context, userModel, child) {
+            return Text('PING ID: ${userModel.pingID}');
+          },
+        ),
       ),
-      themeMode: ThemeMode.dark,
-      home: JoinScreen(selfCallerId: selfCallerID),
     );
   }
 }

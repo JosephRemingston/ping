@@ -1,5 +1,28 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(const Ping());
+}
+
+
+class Ping extends StatelessWidget {
+  const Ping({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: const Color.fromARGB(255, 18, 32, 47),
+      ),
+      home: Scaffold(
+        body: ListView(children: [
+          DataAndStorage(),
+        ]),
+      ),
+    );
+  }
+}
+
 class DataAndStorage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -9,21 +32,21 @@ class DataAndStorage extends StatelessWidget {
           width: 360,
           height: 800,
           clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(color: Colors.white),
+          decoration: const BoxDecoration(color: Colors.white),
           child: Stack(
             children: [
-              Positioned(
+              const Positioned(
                 left: 89,
-                top: 67,
+                top: 69,
                 child: SizedBox(
                   width: 182,
                   child: Text(
                     'Data and Storage',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Color(0xFF333333),
                       fontSize: 18,
-                      fontFamily: 'Manrope',
+                      fontFamily: 'Roboto',
                       fontWeight: FontWeight.w600,
                       height: 0,
                       letterSpacing: 0.18,
@@ -38,18 +61,18 @@ class DataAndStorage extends StatelessWidget {
                   width: 375,
                   height: 44,
                   clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   child: Stack(
                     children: [
-                      Positioned(
+                      const Positioned(
                         left: 0,
                         top: 0,
-                        child: Container(width: 375, height: 44),
+                        child: SizedBox(width: 375, height: 44),
                       ),
                       Positioned(
                         left: 336,
                         top: 18,
-                        child: Container(
+                        child: SizedBox(
                           width: 24.50,
                           height: 10.50,
                           child: Stack(
@@ -60,7 +83,7 @@ class DataAndStorage extends StatelessWidget {
                                 child: Container(
                                   width: 22,
                                   height: 10.50,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     image: DecorationImage(
                                       image: NetworkImage("https://via.placeholder.com/22x10"),
                                       fit: BoxFit.fill,
@@ -74,7 +97,7 @@ class DataAndStorage extends StatelessWidget {
                                 child: Container(
                                   width: 1.50,
                                   height: 3.87,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     image: DecorationImage(
                                       image: NetworkImage("https://via.placeholder.com/1x4"),
                                       fit: BoxFit.fill,
@@ -89,7 +112,7 @@ class DataAndStorage extends StatelessWidget {
                                   width: 18,
                                   height: 6.50,
                                   decoration: ShapeDecoration(
-                                    color: Color(0xFF060606),
+                                    color: const Color(0xFF060606),
                                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(1)),
                                   ),
                                 ),
@@ -104,7 +127,7 @@ class DataAndStorage extends StatelessWidget {
                         child: Container(
                           width: 15.27,
                           height: 10.97,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             image: DecorationImage(
                               image: NetworkImage("https://via.placeholder.com/15x11"),
                               fit: BoxFit.fill,
@@ -118,7 +141,7 @@ class DataAndStorage extends StatelessWidget {
                         child: Container(
                           width: 17,
                           height: 10.67,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             image: DecorationImage(
                               image: NetworkImage("https://via.placeholder.com/17x11"),
                               fit: BoxFit.fill,
@@ -131,27 +154,25 @@ class DataAndStorage extends StatelessWidget {
                         top: 14,
                         child: Container(
                           width: 54,
-                          height: 18,
                           clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(),
-                          child: Stack(
+                          decoration: const BoxDecoration(),
+                          child: const Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Positioned(
-                                left: 0,
-                                top: 0,
-                                child: SizedBox(
-                                  width: 54,
-                                  child: Text(
-                                    '9:41',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Color(0xFF171717),
-                                      fontSize: 15,
-                                      fontFamily: 'Open Sans',
-                                      fontWeight: FontWeight.w600,
-                                      height: 0,
-                                      letterSpacing: -0.30,
-                                    ),
+                              SizedBox(
+                                width: 54,
+                                child: Text(
+                                  '9:41',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Color(0xFF171717),
+                                    fontSize: 15,
+                                    fontFamily: 'Open Sans',
+                                    fontWeight: FontWeight.w600,
+                                    height: 0,
+                                    letterSpacing: -0.30,
                                   ),
                                 ),
                               ),
@@ -163,27 +184,18 @@ class DataAndStorage extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
-                left: -2,
-                top: 86,
-                child: Container(
-                  width: 369.43,
-                  height: 122.92,
+              const Positioned(
+                left: 30,
+                top: 111,
+                child: SizedBox(
+                  width: 306.57,
+                  height: 89.12,
                   child: Stack(
                     children: [
                       Positioned(
-                        left: 0,
-                        top: 0,
-                        child: Container(
-                          width: 369.43,
-                          height: 122.92,
-                          child: Stack(),
-                        ),
-                      ),
-                      Positioned(
-                        left: 37,
-                        top: 66.04,
-                        child: Container(
+                        left: 5,
+                        top: 41.04,
+                        child: SizedBox(
                           width: 301.57,
                           height: 19.12,
                           child: Stack(
@@ -199,7 +211,7 @@ class DataAndStorage extends StatelessWidget {
                                     style: TextStyle(
                                       color: Color(0xFF333333),
                                       fontSize: 16,
-                                      fontFamily: 'Varela Round',
+                                      fontFamily: 'Roboto',
                                       fontWeight: FontWeight.w400,
                                       height: 0,
                                       letterSpacing: 0.16,
@@ -212,9 +224,9 @@ class DataAndStorage extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        left: 37,
-                        top: 95,
-                        child: Container(
+                        left: 5,
+                        top: 70,
+                        child: SizedBox(
                           width: 301.57,
                           height: 19.12,
                           child: Stack(
@@ -230,7 +242,7 @@ class DataAndStorage extends StatelessWidget {
                                     style: TextStyle(
                                       color: Color(0xFF333333),
                                       fontSize: 16,
-                                      fontFamily: 'Varela Round',
+                                      fontFamily: 'Roboto',
                                       fontWeight: FontWeight.w400,
                                       height: 0,
                                       letterSpacing: 0.16,
@@ -243,8 +255,8 @@ class DataAndStorage extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        left: 32,
-                        top: 25,
+                        left: 0,
+                        top: 0,
                         child: SizedBox(
                           width: 61,
                           height: 22,
@@ -254,7 +266,7 @@ class DataAndStorage extends StatelessWidget {
                             style: TextStyle(
                               color: Color(0xFF333333),
                               fontSize: 16,
-                              fontFamily: 'Open Sans',
+                              fontFamily: 'Roboto',
                               fontWeight: FontWeight.w600,
                               height: 0,
                               letterSpacing: 0.16,
@@ -266,7 +278,7 @@ class DataAndStorage extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 21,
                 top: 49,
                 child: Text(
@@ -274,24 +286,24 @@ class DataAndStorage extends StatelessWidget {
                   style: TextStyle(
                     color: Color(0xFFAAA8A8),
                     fontSize: 18,
-                    fontFamily: 'Open Sans',
+                    fontFamily: 'Roboto',
                     fontWeight: FontWeight.w400,
                     height: 0.07,
                     letterSpacing: -0.40,
                   ),
                 ),
               ),
-              Positioned(
-                left: -5,
-                top: 228,
-                child: Container(
-                  width: 368,
-                  height: 83.50,
+              const Positioned(
+                left: 35,
+                top: 243,
+                child: SizedBox(
+                  width: 167,
+                  height: 55,
                   child: Stack(
                     children: [
                       Positioned(
-                        left: 40,
-                        top: 51,
+                        left: 0,
+                        top: 36,
                         child: SizedBox(
                           width: 167,
                           child: Text(
@@ -299,7 +311,7 @@ class DataAndStorage extends StatelessWidget {
                             style: TextStyle(
                               color: Color(0xFF333333),
                               fontSize: 16,
-                              fontFamily: 'Varela Round',
+                              fontFamily: 'Roboto',
                               fontWeight: FontWeight.w400,
                               height: 0,
                               letterSpacing: 0.16,
@@ -308,8 +320,8 @@ class DataAndStorage extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        left: 41,
-                        top: 13,
+                        left: 1,
+                        top: 0,
                         child: SizedBox(
                           width: 84,
                           child: Text(
@@ -317,7 +329,7 @@ class DataAndStorage extends StatelessWidget {
                             style: TextStyle(
                               color: Color(0xFF333333),
                               fontSize: 16,
-                              fontFamily: 'Open Sans',
+                              fontFamily: 'Roboto',
                               fontWeight: FontWeight.w600,
                               height: 0,
                               letterSpacing: 0.16,
@@ -332,8 +344,8 @@ class DataAndStorage extends StatelessWidget {
               Positioned(
                 left: 289,
                 top: 276,
-                child: Container(
-                  width: 46,
+                child: SizedBox(
+                  width: 47,
                   height: 26,
                   child: Stack(
                     children: [
@@ -343,20 +355,35 @@ class DataAndStorage extends StatelessWidget {
                         child: Container(
                           width: 46,
                           height: 26,
-                          decoration: ShapeDecoration(
+                          decoration: const ShapeDecoration(
                             shape: RoundedRectangleBorder(
                               side: BorderSide(width: 1, color: Color(0x05FF2121)),
                             ),
                           ),
-                          child: Stack(
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Positioned(
-                                left: 0,
-                                top: 0,
-                                child: Container(
-                                  width: 46,
-                                  height: 26,
-                                  child: FlutterLogo(),
+                              SizedBox(
+                                width: 46,
+                                height: 26,
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      width: 46,
+                                      height: 26,
+                                      decoration: ShapeDecoration(
+                                        color: const Color(0xFFEEEEEE),
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(50),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],
@@ -364,12 +391,12 @@ class DataAndStorage extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        left: 3.47,
+                        left: 3.55,
                         top: 4.33,
                         child: Container(
-                          width: 17.36,
+                          width: 17.74,
                           height: 17.33,
-                          decoration: ShapeDecoration(
+                          decoration: const ShapeDecoration(
                             shape: RoundedRectangleBorder(
                               side: BorderSide(width: 1, color: Color(0x05FF2121)),
                             ),
@@ -382,7 +409,7 @@ class DataAndStorage extends StatelessWidget {
                               )
                             ],
                           ),
-                          child: FlutterLogo(),
+                          child: const FlutterLogo(),
                         ),
                       ),
                     ],

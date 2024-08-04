@@ -1,6 +1,28 @@
 import 'package:flutter/material.dart';
 
-class ProfileScreen2 extends StatelessWidget {
+void main() {
+  runApp(const Ping());
+}
+
+class Ping extends StatelessWidget {
+  const Ping({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: const Color.fromARGB(255, 18, 32, 47),
+      ),
+      home: Scaffold(
+        body: ListView(children: [
+          ProfileScreen(),
+        ]),
+      ),
+    );
+  }
+}
+
+class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -19,18 +41,18 @@ class ProfileScreen2 extends StatelessWidget {
                   width: 375,
                   height: 44,
                   clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   child: Stack(
                     children: [
-                      Positioned(
+                      const Positioned(
                         left: 0,
                         top: 0,
-                        child: Container(width: 375, height: 44),
+                        child: SizedBox(width: 375, height: 44),
                       ),
                       Positioned(
                         left: 336,
                         top: 18,
-                        child: Container(
+                        child: SizedBox(
                           width: 24.50,
                           height: 10.50,
                           child: Stack(
@@ -41,9 +63,10 @@ class ProfileScreen2 extends StatelessWidget {
                                 child: Container(
                                   width: 22,
                                   height: 10.50,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     image: DecorationImage(
-                                      image: NetworkImage("https://via.placeholder.com/22x10"),
+                                      image: NetworkImage(
+                                          "https://via.placeholder.com/22x10"),
                                       fit: BoxFit.fill,
                                     ),
                                   ),
@@ -55,9 +78,10 @@ class ProfileScreen2 extends StatelessWidget {
                                 child: Container(
                                   width: 1.50,
                                   height: 3.87,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     image: DecorationImage(
-                                      image: NetworkImage("https://via.placeholder.com/1x4"),
+                                      image: NetworkImage(
+                                          "https://via.placeholder.com/1x4"),
                                       fit: BoxFit.fill,
                                     ),
                                   ),
@@ -70,8 +94,9 @@ class ProfileScreen2 extends StatelessWidget {
                                   width: 18,
                                   height: 6.50,
                                   decoration: ShapeDecoration(
-                                    color: Color(0xFF060606),
-                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(1)),
+                                    color: const Color(0xFF060606),
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(1)),
                                   ),
                                 ),
                               ),
@@ -85,9 +110,10 @@ class ProfileScreen2 extends StatelessWidget {
                         child: Container(
                           width: 15.27,
                           height: 10.97,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             image: DecorationImage(
-                              image: NetworkImage("https://via.placeholder.com/15x11"),
+                              image: NetworkImage(
+                                  "https://via.placeholder.com/15x11"),
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -99,9 +125,10 @@ class ProfileScreen2 extends StatelessWidget {
                         child: Container(
                           width: 17,
                           height: 10.67,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             image: DecorationImage(
-                              image: NetworkImage("https://via.placeholder.com/17x11"),
+                              image: NetworkImage(
+                                  "https://via.placeholder.com/17x11"),
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -112,27 +139,25 @@ class ProfileScreen2 extends StatelessWidget {
                         top: 14,
                         child: Container(
                           width: 54,
-                          height: 18,
                           clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(),
-                          child: Stack(
+                          decoration: const BoxDecoration(),
+                          child: const Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Positioned(
-                                left: 0,
-                                top: 0,
-                                child: SizedBox(
-                                  width: 54,
-                                  child: Text(
-                                    '9:41',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Color(0xFF171717),
-                                      fontSize: 15,
-                                      fontFamily: 'Open Sans',
-                                      fontWeight: FontWeight.w600,
-                                      height: 0,
-                                      letterSpacing: -0.30,
-                                    ),
+                              SizedBox(
+                                width: 54,
+                                child: Text(
+                                  '9:41',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Color(0xFF171717),
+                                    fontSize: 15,
+                                    fontFamily: 'Open Sans',
+                                    fontWeight: FontWeight.w600,
+                                    height: 0,
+                                    letterSpacing: -0.30,
                                   ),
                                 ),
                               ),
@@ -144,17 +169,17 @@ class ProfileScreen2 extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
-                left: -11,
-                top: 260,
-                child: Container(
-                  width: 371,
-                  height: 115,
+              const Positioned(
+                left: 35,
+                top: 295,
+                child: SizedBox(
+                  width: 96,
+                  height: 65,
                   child: Stack(
                     children: [
                       Positioned(
-                        left: 48,
-                        top: 15,
+                        left: 0,
+                        top: 0,
                         child: SizedBox(
                           width: 65,
                           height: 38,
@@ -164,8 +189,8 @@ class ProfileScreen2 extends StatelessWidget {
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 20,
-                              fontFamily: 'Open Sans',
-                              fontWeight: FontWeight.w600,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w500,
                               height: 0,
                               letterSpacing: 0.20,
                             ),
@@ -173,8 +198,8 @@ class ProfileScreen2 extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        left: 51,
-                        top: 73,
+                        left: 14,
+                        top: 46,
                         child: SizedBox(
                           width: 82,
                           height: 19,
@@ -183,7 +208,7 @@ class ProfileScreen2 extends StatelessWidget {
                             style: TextStyle(
                               color: Color(0xFF333333),
                               fontSize: 16,
-                              fontFamily: 'Varela Round',
+                              fontFamily: 'Roboto',
                               fontWeight: FontWeight.w400,
                               height: 0,
                               letterSpacing: 0.16,
@@ -195,17 +220,17 @@ class ProfileScreen2 extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
-                left: -11,
-                top: 387,
-                child: Container(
-                  width: 371,
-                  height: 115,
+              const Positioned(
+                left: 35,
+                top: 404,
+                child: SizedBox(
+                  width: 214,
+                  height: 75,
                   child: Stack(
                     children: [
                       Positioned(
-                        left: 48,
-                        top: 15,
+                        left: 0,
+                        top: 0,
                         child: SizedBox(
                           width: 65,
                           height: 38,
@@ -215,8 +240,8 @@ class ProfileScreen2 extends StatelessWidget {
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 20,
-                              fontFamily: 'Open Sans',
-                              fontWeight: FontWeight.w600,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w500,
                               height: 0,
                               letterSpacing: 0.20,
                             ),
@@ -224,28 +249,8 @@ class ProfileScreen2 extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        left: 48,
-                        top: 15,
-                        child: SizedBox(
-                          width: 65,
-                          height: 38,
-                          child: Text(
-                            'About',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
-                              fontFamily: 'Open Sans',
-                              fontWeight: FontWeight.w600,
-                              height: 0,
-                              letterSpacing: 0.20,
-                            ),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        left: 51,
-                        top: 73,
+                        left: 14,
+                        top: 56,
                         child: SizedBox(
                           width: 200,
                           height: 19,
@@ -254,7 +259,7 @@ class ProfileScreen2 extends StatelessWidget {
                             style: TextStyle(
                               color: Color(0xFF333333),
                               fontSize: 16,
-                              fontFamily: 'Varela Round',
+                              fontFamily: 'Roboto',
                               fontWeight: FontWeight.w400,
                               height: 0,
                               letterSpacing: 0.16,
@@ -266,17 +271,17 @@ class ProfileScreen2 extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
-                left: -9,
-                top: 514,
-                child: Container(
-                  width: 371,
-                  height: 115,
+              const Positioned(
+                left: 38,
+                top: 530,
+                child: SizedBox(
+                  width: 204,
+                  height: 76,
                   child: Stack(
                     children: [
                       Positioned(
-                        left: 47,
-                        top: 16,
+                        left: 0,
+                        top: 0,
                         child: SizedBox(
                           width: 67,
                           height: 38,
@@ -295,8 +300,8 @@ class ProfileScreen2 extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        left: 51,
-                        top: 73,
+                        left: 4,
+                        top: 57,
                         child: SizedBox(
                           width: 200,
                           height: 19,
@@ -323,7 +328,7 @@ class ProfileScreen2 extends StatelessWidget {
                 child: Container(
                   width: 16,
                   height: 15,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: NetworkImage("https://via.placeholder.com/16x15"),
                       fit: BoxFit.fill,
@@ -337,7 +342,7 @@ class ProfileScreen2 extends StatelessWidget {
                 child: Container(
                   width: 16,
                   height: 15,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: NetworkImage("https://via.placeholder.com/16x15"),
                       fit: BoxFit.fill,

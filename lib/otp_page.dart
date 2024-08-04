@@ -1,6 +1,28 @@
 import 'package:flutter/material.dart';
 
-class otp_page extends StatelessWidget {
+void main() {
+  runApp(const Ping());
+}
+
+class Ping extends StatelessWidget {
+  const Ping({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: const Color.fromARGB(255, 18, 32, 47),
+      ),
+      home: Scaffold(
+        body: ListView(children: [
+          OtpPage(),
+        ]),
+      ),
+    );
+  }
+}
+
+class OtpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -9,7 +31,7 @@ class otp_page extends StatelessWidget {
           width: 360,
           height: 809,
           clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(color: Colors.white),
+          decoration: const BoxDecoration(color: Colors.white),
           child: Stack(
             children: [
               Positioned(
@@ -25,7 +47,7 @@ class otp_page extends StatelessWidget {
                       clipBehavior: Clip.antiAlias,
                       decoration: ShapeDecoration(
                         gradient: RadialGradient(
-                          center: Alignment(0.34, 0.56),
+                          center: const Alignment(0.34, 0.56),
                           radius: 0.45,
                           colors: [Colors.white, Colors.white.withOpacity(0)],
                         ),
@@ -57,7 +79,7 @@ class otp_page extends StatelessWidget {
                             top: 35,
                             child: Transform(
                               transform: Matrix4.identity()..translate(0.0, 0.0)..rotateZ(0.11),
-                              child: Container(
+                              child: SizedBox(
                                 width: 68.45,
                                 height: 129.40,
                                 child: Stack(
@@ -70,7 +92,7 @@ class otp_page extends StatelessWidget {
                                         child: Container(
                                           width: 11.86,
                                           height: 14.24,
-                                          decoration: ShapeDecoration(
+                                          decoration: const ShapeDecoration(
                                             color: Colors.white,
                                             shape: OvalBorder(),
                                           ),
@@ -88,10 +110,10 @@ class otp_page extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 113,
                 top: 39,
-                child: Container(width: 133, height: 165),
+                child: SizedBox(width: 133, height: 165),
               ),
               Positioned(
                 left: -28,
@@ -99,7 +121,7 @@ class otp_page extends StatelessWidget {
                 child: Container(
                   width: 423,
                   height: 213,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: NetworkImage("https://via.placeholder.com/423x213"),
                       fit: BoxFit.fill,
@@ -107,7 +129,7 @@ class otp_page extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 123,
                 top: 293,
                 child: SizedBox(
@@ -125,15 +147,15 @@ class otp_page extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 88,
                 top: 444,
-                child: Container(width: 49, height: 49),
+                child: SizedBox(width: 49, height: 49),
               ),
               Positioned(
                 left: 63,
                 top: 418,
-                child: Container(
+                child: SizedBox(
                   width: 241,
                   height: 49,
                   child: Stack(
@@ -145,7 +167,7 @@ class otp_page extends StatelessWidget {
                           width: 49.92,
                           height: 49,
                           decoration: ShapeDecoration(
-                            color: Color(0xFF0CC0E0),
+                            color: const Color(0xFF0CC0E0),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(29),
                             ),
@@ -160,13 +182,13 @@ class otp_page extends StatelessWidget {
                           height: 49,
                           decoration: ShapeDecoration(
                             shape: RoundedRectangleBorder(
-                              side: BorderSide(width: 1),
+                              side: const BorderSide(width: 1),
                               borderRadius: BorderRadius.circular(29),
                             ),
                           ),
                         ),
                       ),
-                      Positioned(
+                      const Positioned(
                         left: 80.91,
                         top: 14.90,
                         child: SizedBox(
@@ -195,7 +217,7 @@ class otp_page extends StatelessWidget {
                 child: Container(
                   width: 46,
                   height: 48,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: NetworkImage("https://via.placeholder.com/46x48"),
                       fit: BoxFit.fill,
@@ -209,7 +231,7 @@ class otp_page extends StatelessWidget {
                 child: Container(
                   width: 46,
                   height: 48,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: NetworkImage("https://via.placeholder.com/46x48"),
                       fit: BoxFit.fill,
@@ -222,7 +244,7 @@ class otp_page extends StatelessWidget {
                 top: 617.57,
                 child: Transform(
                   transform: Matrix4.identity()..translate(0.0, 0.0)..rotateZ(2.41),
-                  child: Container(
+                  child: SizedBox(
                     width: 118.76,
                     height: 108.59,
                     child: Stack(
@@ -236,13 +258,13 @@ class otp_page extends StatelessWidget {
                               width: 43.57,
                               height: 43.65,
                               clipBehavior: Clip.antiAlias,
-                              decoration: BoxDecoration(),
-                              child: Column(
+                              decoration: const BoxDecoration(),
+                              child: const Column(
                                 mainAxisSize: MainAxisSize.min,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Container(
+                                  SizedBox(
                                     width: 43.57,
                                     height: 43.65,
                                     child: Stack(),
@@ -252,7 +274,7 @@ class otp_page extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Positioned(
+                        const Positioned(
                           left: -72.92,
                           top: -16.57,
                           child: SizedBox(
@@ -279,7 +301,7 @@ class otp_page extends StatelessWidget {
               Positioned(
                 left: 65,
                 top: 341,
-                child: Container(
+                child: SizedBox(
                   width: 214,
                   height: 48.71,
                   child: Stack(
@@ -290,7 +312,7 @@ class otp_page extends StatelessWidget {
                         child: Container(
                           width: 9.12,
                           height: 9.33,
-                          decoration: ShapeDecoration(
+                          decoration: const ShapeDecoration(
                             color: Color(0xFFC0D9DD),
                             shape: OvalBorder(),
                           ),
@@ -302,7 +324,7 @@ class otp_page extends StatelessWidget {
                         child: Container(
                           width: 4.98,
                           height: 5.18,
-                          decoration: ShapeDecoration(
+                          decoration: const ShapeDecoration(
                             color: Color(0xFFC5DCE0),
                             shape: OvalBorder(),
                           ),
@@ -312,7 +334,7 @@ class otp_page extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
+              const Positioned(
                 left: 117,
                 top: 341,
                 child: SizedBox(
@@ -337,18 +359,18 @@ class otp_page extends StatelessWidget {
                   width: 375,
                   height: 44,
                   clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   child: Stack(
                     children: [
-                      Positioned(
+                      const Positioned(
                         left: 0,
                         top: 0,
-                        child: Container(width: 375, height: 44),
+                        child: SizedBox(width: 375, height: 44),
                       ),
                       Positioned(
                         left: 336,
                         top: 18,
-                        child: Container(
+                        child: SizedBox(
                           width: 24.50,
                           height: 10.50,
                           child: Stack(
@@ -359,7 +381,7 @@ class otp_page extends StatelessWidget {
                                 child: Container(
                                   width: 22,
                                   height: 10.50,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     image: DecorationImage(
                                       image: NetworkImage("https://via.placeholder.com/22x10"),
                                       fit: BoxFit.fill,
@@ -373,7 +395,7 @@ class otp_page extends StatelessWidget {
                                 child: Container(
                                   width: 1.50,
                                   height: 3.87,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     image: DecorationImage(
                                       image: NetworkImage("https://via.placeholder.com/1x4"),
                                       fit: BoxFit.fill,
@@ -388,7 +410,7 @@ class otp_page extends StatelessWidget {
                                   width: 18,
                                   height: 6.50,
                                   decoration: ShapeDecoration(
-                                    color: Color(0xFF060606),
+                                    color: const Color(0xFF060606),
                                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(1)),
                                   ),
                                 ),
@@ -403,7 +425,7 @@ class otp_page extends StatelessWidget {
                         child: Container(
                           width: 15.27,
                           height: 10.97,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             image: DecorationImage(
                               image: NetworkImage("https://via.placeholder.com/15x11"),
                               fit: BoxFit.fill,
@@ -417,7 +439,7 @@ class otp_page extends StatelessWidget {
                         child: Container(
                           width: 17,
                           height: 10.67,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             image: DecorationImage(
                               image: NetworkImage("https://via.placeholder.com/17x11"),
                               fit: BoxFit.fill,
@@ -431,8 +453,8 @@ class otp_page extends StatelessWidget {
                         child: Container(
                           width: 54,
                           clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(),
-                          child: Row(
+                          decoration: const BoxDecoration(),
+                          child: const Row(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,

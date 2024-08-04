@@ -1,13 +1,22 @@
-{pkgs}: {
+{pkgs ? import <nixpkgs> {}}: {
   channel = "stable-23.11";
   packages = [
     pkgs.nodePackages.firebase-tools
     pkgs.jdk17
     pkgs.unzip
-  ];
-  idx.extensions = [
+    pkgs.python311Packages.pip
+
+    
     
   ];
+  idx.extensions = [
+
+    
+  
+ "Dart-Code.dart-code"
+ "Dart-Code.flutter"
+ "ms-python.debugpy"
+ "ms-python.python"];
   idx.previews = {
     previews = {
       web = {
@@ -39,3 +48,5 @@
     };
   };
 }
+
+
