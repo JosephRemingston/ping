@@ -1,9 +1,11 @@
+import os
 from flask import Flask, request, jsonify
 from flask_socketio import SocketIO, send, emit
 import json
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your_secret_key'
+app.config['SECRET_KEY'] = os.urandom(24)
+
 socketio = SocketIO(app)
 
 clients = {}

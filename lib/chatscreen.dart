@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 void main() {
   runApp(const Ping());
@@ -26,6 +28,32 @@ class Ping extends StatelessWidget {
 class ChatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final String baseUrl = 'http://localhost:8765';
+    Future<void> joinClient(String clientId) async {
+      final response = await http.post(
+        Uri.parse('$baseUrl/join'),
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode({'client_id': clientId}),
+      );
+      if (response.statusCode == 200) {
+        print('Client joined: $clientId');
+      } else {
+        print('Failed to join: ${response.body}');
+      }
+    }
+    Future<void> sendMessage(String from, String to, String message) async {
+      final response = await http.post(
+        Uri.parse('$baseUrl/send_message'),
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode({'from': from, 'to': to, 'message': message}),
+      );
+
+      if (response.statusCode == 200) {
+        print('Message sent from $from to $to: $message');
+      } else {
+        print('Failed to send message: ${response.body}');
+      }
+  }
     return Column(
       children: [
         Container(
