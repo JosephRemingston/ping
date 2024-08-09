@@ -1,0 +1,6 @@
+kademlia==2.0.0
+websockets==10.0
+Flask==2.1.1
+Flask-SocketIO==5.2.1
+aiortc==1.2.0
+cryptography==3.4.7
